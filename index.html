@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Space Cruise | Welcome </title>
+    <style>
+        @font-face {
+            font-family: 'Albert Sans Bold';
+            src: url(AlbertSans-Bold.ttf) format('truetype');
+        }
+        body {
+            font-family: 'Albert Sans Bold';
+            background-image: url(spacebg.jpg.jpg);
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .ticket {
+            background-color: #fff;
+            width: 400px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 8px 8px 5px rgb(54, 31, 91);
+        }
+
+        .ticket-header {
+            background-color: #3A0071;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .ticket-body {
+            padding: 30px;
+            align-items: center;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .row span {
+            font-size: 16px;
+        }
+
+        .message {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 20px;
+            font-style: italic;
+            color: #3A0071;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #3A0071;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-family: "Albert Sans Bold";
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #8866ab;
+        }
+    </style>
+</head>
+<body>
+    <!--Ticket Page-->
+    <div class="ticket">
+        <div class="ticket-header">
+            Space Cruise+
+        </div>
+        <div class="ticket-body">
+            <div class="ticket-content">
+                <div class="message">
+                    A universe of wonders await you!
+                    <!--Continue button-->
+                    <div class="button-container">
+                        <button onclick="redirect()">Welcome</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function redirect() {
+            window.location.href = "todo.html"; 
+        }
+    </script>
+
+</body>
+</html>

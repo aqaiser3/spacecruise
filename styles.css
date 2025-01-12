@@ -1,0 +1,147 @@
+body
+{
+  background-image: linear-gradient(#0A002F, #3A0071);
+}
+
+
+h1 { text-align: center;}
+
+
+#m-title {
+    
+    font-size: 50px;
+    color: ghostwhite;
+    font-style: bold;
+    
+        
+}
+.webpage
+{
+	width: 1200px;
+	margin:auto;
+	background-image: linear-gradient(#0A002F, #3A0071);  
+    
+}
+
+.mission {
+    font-size: 20px;
+    color: ghostwhite;
+    padding: 10px;
+   
+}
+
+.text
+{ 
+	width: 1000px;
+	margin: auto;
+	padding-top: 50px;
+    padding bottom:50px;
+    color: #3A0071;
+}
+
+
+body {
+
+    margin: 20px;
+    font-family: "Albert Sans Bold";
+}
+
+@font-face {
+            font-family: "Albert Sans Bold";
+            src: url('AlbertSans-Bold.ttf') format('truetype');
+        }
+
+.label{
+    
+    text-align: left;
+    margin: auto;
+}
+
+
+
+  html {
+    scroll-behavior: smooth;
+}
+
+
+
+
+
+
+
+/* nav bar thingy*/
+
+.navbar ul {
+    margin-top:0 ;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    background-color: #0A002F; /* Color scheme */
+    padding: 10px 0  ;
+    margin-bottom: 20px;
+    
+}
+
+.navbar li {
+    margin: 5px /* Space between the buttons */
+}
+
+/* Style for Each Button */
+.navbar .nav-btn {
+    
+    color: #ffffff; /* White text */
+     padding-top: 0;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: background-color 1s ease, color 1s ease;
+    text-decoration: none;
+   
+    
+}
+
+/* Button Hover Effect */
+.navbar .nav-btn:hover {
+    background-color: mediumpurple; /* Slightly darker shade */
+    color: #e0a899; /* Darker text on hover */
+}
+
+
+
+
+/* Boxes new */
+
+#planet {
+   width: 1000px;
+    margin:auto;
+	background-color: ghostwhite;  
+    padding: 10px;
+    border-radius: 15px;
+}
+
+
+#space {
+    
+    width:200px;
+    height: 50px;
+}
+
+#align
+{
+  
+    justify-content: center; /* Horizontally aligns the elements */
+    align-items: center; /* Ensures vertical alignment of input and button */
+
+    margin-top: 20px; /* Optional: Adds space above the container */
+    display: inline-block;
+}
+
+
+.new
+{
+     justify-content: center; /* Horizontally aligns the elements */
+    align-items: center; /* Ensures vertical alignment of input and button */
+    
+}
+

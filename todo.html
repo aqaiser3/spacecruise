@@ -1,0 +1,337 @@
+<!doctype html>
+
+<head>
+    
+    <title>Space Cruise+ | Workspace  </title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Remove bullet points from the list */
+        #task-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        /* Hide delete buttons by default */
+        li button {
+            display: none;
+        }
+
+        /* Show delete button when hovering over the list item */
+        li:hover button {
+            display: inline-block;
+        }
+
+        button {
+            background: purple;
+    font-family: serif;
+    font-size: 16px;
+    border-radius: 8px;
+    color: aliceblue;
+    padding: 10px 20px; /* Adjust for proper sizing */
+    border: 1px solid #ccc;
+            display: inline-block;
+    justify-content: center;
+    cursor: pointer; /* Add a pointer cursor for better user experience */
+    align-items: center; /* Centers text inside the button */
+            
+}
+
+        .taskk {
+            padding: 10px;
+            
+            font-size: 16px;
+            width: 250px;
+            border-radius: 5px;
+            border: 1px solid floralwhite;
+            background-color: ghostwhite;
+            margin: auto;
+            margin-left: 320px;
+            margin-bottom: 20px;
+            justify-content: center;  
+           
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ddd;
+            border-radius: 50%;
+            margin-right: 10px;
+            cursor: pointer;
+            background-color: #fff;
+            position: relative;
+            transition: background-color 0.3s, border-color 0.3s;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+
+        input[type="checkbox"]:checked {
+            background-color: purple;
+            border-color: purple;
+        }
+
+        input[type="checkbox"]:checked::before {
+            content: '✔';
+            position: absolute;
+            left: 4px;
+            top: -2px;
+            font-size: 16px;
+            color: white;
+            font-weight: bold;
+        }
+
+        li button {
+            background: #e74c3c;
+            font-family: sans-serif;
+            font-size: 9px;
+            color: white;
+            padding: 2px;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        li button:hover {
+            background: #c0392b;
+        }
+
+        li input[type="checkbox"]:checked + label {
+            text-decoration: line-through;
+            color: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="webpage">
+        <div class="text">
+            
+              <!-- Navigation Bar -->
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#mercury" class="nav-btn">Pre-Launch Preparation</a></li>
+                    <li><a href="#venus" class="nav-btn">During the Mission</a></li>
+                    <li><a href="#mars" class="nav-btn">Post-Mission Activities</a></li>
+                   
+                </ul>
+            </nav>  
+
+            <h1 id="m-title" >Space Cruise+</h1>
+
+           
+
+            <p class="mission">Our mission is to empower astronauts and space agencies with meticulously curated to-do lists tailored to every stage of space exploration. By combining expert insights, mission-specific requirements, and streamlined organization, we ensure that astronauts are fully prepared, focused, and confident as they embark on their extraordinary journeys. From pre-launch preparations to in-orbit missions and post-return activities, we aim to simplify complex tasks, enhance efficiency, and support the success of space exploration efforts worldwide.</p>
+
+            <!-- Predefined task sections for each planet -->
+           
+            
+            <div id="planet">  
+                
+                
+                <div id="mercury">
+                <h1>Pre-Launch Preparation</h1>
+                <ul id="task-list-mercury"></ul>
+                
+                <div id="align">
+                <input type="text" class= "taskk" id="task-input-mercury" placeholder="Enter a task">
+                <button onclick="addTask('mercury')">Add Task</button>
+                </div>
+            </div>
+    
+           
+        </div>
+            
+            <div id= "space">
+                
+                </div>
+
+        
+        <div id="planet">
+        
+            <div id="venus">
+                <h1>During the Mission</h1>
+                <ul id="task-list-venus"></ul>
+                
+                 <div id="align">
+                <input type="text" class= "taskk" id="task-input-venus" placeholder="Enter a task">
+                <button  onclick="addTask('venus')">Add Task</button>
+                </div> 
+            </div>
+        </div>
+
+      
+            <div id= "space">
+                
+                </div>
+        
+        <div id="planet">
+            <div id="mars">
+                <h1>Post-Mission Activities</h1>
+                <ul id="task-list-mars"></ul>
+                
+                 <div id="align">
+                <input type="text" class= "taskk" id="task-input-mars" placeholder="Enter a task">
+                <button onclick="addTask('mars')">Add Task</button>
+                </div>
+            </div>
+            
+    
+        </div>
+        
+                <div id= "space">
+                
+                </div>
+            
+        
+                        </div>
+        
+        
+            </div>
+    </div>
+
+            <script>
+                // Predefined tasks for each planet
+                const predefinedTasks = {
+                    mercury: [
+                        "Finalize mission training, including spacewalk (EVA) and robotics simulations. ",
+                        "Pack personal belongings and ensure compliance with weight and size restrictions. ",
+                        "Review mission briefings, objectives, and spacecraft operational manuals.",
+                        "Conduct final equipment checks and ensure tools are properly secured. ",
+                        "Meet with the medical team for pre-flight health assessments and immunizations.",
+                    ],
+                    venus: [
+                        "Execute and monitor scheduled experiments, recording all observations meticulously.",
+                        "Perform regular maintenance and inspections of spacecraft systems." ,
+                        "Adhere to the exercise regimen to mitigate muscle and bone loss in microgravity.",
+                        "Communicate daily with mission control to provide updates and receive instructions.",
+                        "Document personal experiences and observations for post-mission reports and outreach.",
+                        
+                    ],
+                    mars: [
+                        "Undergo medical evaluations to assess physical and psychological health post-spaceflight.",
+                        "Debrief with mission control and research teams to review mission outcomes.",
+                        "Analyze and organize collected data for scientific publication or reporting.",
+                        "Participate in public outreach events, including interviews and educational presentations.",
+                        "Reflect on mission performance and provide feedback to improve future missions.",
+
+
+],
+                    
+                };
+                
+                
+
+                // Load predefined tasks on page load
+                document.addEventListener("DOMContentLoaded", function() {
+                    for (const planet in predefinedTasks) {
+                        predefinedTasks[planet].forEach(function(task) {
+                            createTaskElement(planet, task, false);
+                        });
+                    }
+
+                    // Load tasks from localStorage
+                    for (const planet in predefinedTasks) {
+                        loadTasks(planet);
+                    }
+                });
+
+                // Function to create a new task list item
+                function createTaskElement(planet, taskText, checked) {
+                    var ul = document.getElementById(`task-list-${planet}`);
+                    var li = document.createElement("li");
+
+                    // Create a checkbox
+                    var checkbox = document.createElement("input");
+                    checkbox.type = "checkbox";
+                    checkbox.style.marginRight = "10px";
+                    checkbox.checked = checked;
+
+                    // Add event listener to handle checkbox change
+                    checkbox.addEventListener('change', function() {
+                        updateTaskState(planet, taskText, checkbox.checked);
+                    });
+
+                    // Create a label for the task
+                    var label = document.createElement("label");
+                    label.textContent = taskText;
+
+                    // Create a delete button
+                    var deleteButton = document.createElement("button");
+                    deleteButton.textContent = "Delete";
+                    deleteButton.style.marginLeft = "10px";
+                    deleteButton.onclick = function () {
+                        li.remove();
+                        deleteTask(planet, taskText);
+                    };
+
+                    // Append the checkbox, label, and delete button to the list item
+                    li.appendChild(checkbox);
+                    li.appendChild(label);
+                    li.appendChild(deleteButton);
+
+                    // Add the list item to the task list
+                    ul.appendChild(li);
+                }
+
+                // Function to add a task manually
+                function addTask(planet) {
+                    var input = document.getElementById(`task-input-${planet}`);
+                    var taskText = input.value.trim();
+
+                    if (taskText === "") {
+                        alert("Please enter a task!");
+                        return;
+                    }
+
+                    createTaskElement(planet, taskText, false);
+                    saveTask(planet, taskText, false);
+                    input.value = "";
+                }
+
+                // Function to save a task to localStorage
+                function saveTask(planet, taskText, checked) {
+                    var tasks = JSON.parse(localStorage.getItem(`tasks-${planet}`)) || [];
+                    tasks.push({ text: taskText, checked: checked });
+                    localStorage.setItem(`tasks-${planet}`, JSON.stringify(tasks));
+                }
+
+                // Function to load tasks from localStorage
+                function loadTasks(planet) {
+                    var tasks = JSON.parse(localStorage.getItem(`tasks-${planet}`)) || [];
+                    tasks.forEach(function(task) {
+                        createTaskElement(planet, task.text, task.checked);
+                    });
+                }
+
+                // Function to update task state (checkbox checked/unchecked)
+                function updateTaskState(planet, taskText, checked) {
+                    var tasks = JSON.parse(localStorage.getItem(`tasks-${planet}`)) || [];
+                    tasks.forEach(function(task) {
+                        if (task.text === taskText) {
+                            task.checked = checked;
+                        }
+                    });
+                    localStorage.setItem(`tasks-${planet}`, JSON.stringify(tasks));
+                }
+
+                // Function to delete a task from localStorage
+                function deleteTask(planet, taskText) {
+                    var tasks = JSON.parse(localStorage.getItem(`tasks-${planet}`)) || [];
+                    tasks = tasks.filter(function(task) {
+                        return task.text !== taskText;
+                    });
+                    localStorage.setItem(`tasks-${planet}`, JSON.stringify(tasks));
+                }
+            </script>
+    
+</body>
+</html>
